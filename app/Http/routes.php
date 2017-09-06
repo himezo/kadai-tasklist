@@ -11,6 +11,31 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+Route::get('/', 'TasksController@index');
+
+// CRUD
+//Route::get('tasks/{id}', 'TasksController@show');
+//Route::post('tasks', 'TasksController@store');
+//Route::put('tasks/{id}', 'TasksController@update');
+//Route::delete('tasks/{id}', 'TasksController@destroy');
+
+// index: showの補助
+//Route::get('tasks', 'TasksController@index');
+
+// create: 新規作成用のフォームページ
+//Route::get('tasks/create', 'TasksController@create');
+
+//edit: 更新用のフォームページ
+//Route::get('tasks/{id}/edit', 'TasksController@edit');
+
+Route::resource('tasks', 'TasksController');
+
+
+
+
+
+
